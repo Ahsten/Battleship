@@ -1,31 +1,41 @@
+
 //Returns a ship object 
-function shipFactory(length, hits, sunk){
-    return{
-        length: length,
-        hit: hits,
-        sunk: sunk,
+export default class Ship{
+    constructor(length){
+        this.length = length;
+        this.hits = new Array(length).fill('');
+        this.sunk = false;
     }
-}
 
-//Returns an array of where the ship has been hit
-function hit(hitLocaiton, array){
-    array[hitLocaiton] = 'x';
-    return array;
-}
+    getShipLength(){
+        return this.hits.length;
+    }
+    //Sets the hit location of the ship
+    hit(hitLocaiton){
+        this.hits[hitLocaiton] = 'x';
+    }
 
-//Checks an array see whether a ship has been sunk
-function isSunk(shipArray){
-    let hitCount = 0;
+    getHits(){
+        return this.hits;
+    }
 
-    for(let x = 0; x < shipArray.length; x++){
-        if(shipArray[x] === 'x'){
-            count += 1;
+    //Checks whether the ship is sunk or not
+    isSunk(){
+        let hitCount = 0;
+    
+        for(let x = 0; x < this.hits.length; x++){
+            if(this.hits[x] === 'x'){
+                hitCount += 1;
+            }
         }
-    }
-
-    if(hitCount == shipArray.length){
-        return true;
-    } else {
-        return false;
-    }
+    
+        if(hitCount == this.hits.length){
+            this.sunk = true;
+            return this.sunk;
+        } else {
+            this.sunk = false;
+            return this.sunk;
+        }
+    }  
 }
+
