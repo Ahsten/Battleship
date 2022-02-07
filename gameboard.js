@@ -32,7 +32,6 @@ export default class GameBoard {
             return false;
         }
 
-
         if(this.board[row][column] === ""){
             this.board[row][column] = "M";
             return false;
@@ -44,14 +43,14 @@ export default class GameBoard {
             if(column > 0 && this.board[row][column - 1]){
                 let x = 1;
                 while (column - x >= 0 && this.board[row][column - x]){
-                  hitPosition++
-                  x++
+                  hitPosition++;
+                  x++;
                 }
             } else if (row > 0 && this.board[row - 1][column]){
                 let x = 1;
                 while (row - x >= 0 && this.board[row - x][column]){
-                  hitPosition++
-                  x++
+                  hitPosition++;
+                  x++;
                 }
             }
             this.board[row][column].hit(hitPosition);
@@ -65,11 +64,11 @@ export default class GameBoard {
 
         ships.forEach(ship => {
             if(ship.isSunk()){
-                sunkCounter++
+                sunkCounter++;
             }
         });
 
-        if(sunkCounter === 5){
+        if(sunkCounter === ships.length){
             return true;
         }
     }
