@@ -1,4 +1,5 @@
 import Ship from "./ship";
+import GameBoard from "./gameboard";
 
 
 describe('ship', () => {
@@ -25,5 +26,22 @@ describe('ship', () => {
         ship.hit(0);
         ship.hit(1);
         expect(ship.isSunk()).toBe(false);
+    });
+
+    test('Test hits on a ship', ()=> {
+        const gameboard = new GameBoard();
+        const ship = new Ship(2);
+        gameboard.placeShip(ship, true, 0, 0);
+        gameboard.recieveAttack(1, 0);
+        expect(ship.getHits()).toStrictEqual(["", "x"]);
+    });
+
+    test('Test a sunk ship', ()=> {
+        const gameboard = new GameBoard();
+        const ship = new Ship(2);
+        gameboard.placeShip(ship, true, 0, 0);
+        gameboard.recieveAttack(1, 0);
+        gameboard.recieveAttack(0, 0);
+        expect(ship.isSunk()).toBe(true);
     });
 })

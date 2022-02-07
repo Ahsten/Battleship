@@ -31,10 +31,10 @@ export default class Ship{
     
         if(hitCount == this.hits.length){
             this.sunk = true;
-            return this.sunk;
+            return true;
         } else {
             this.sunk = false;
-            return this.sunk;
+            return false;
         }
     }  
 }
