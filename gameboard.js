@@ -60,8 +60,18 @@ export default class GameBoard {
     }
 
     //Check if all ships have been sunk
-    gameOver(){
-        
+    gameOver(ships){
+        let sunkCounter = 0; 
+
+        ships.forEach(ship => {
+            if(ship.isSunk()){
+                sunkCounter++
+            }
+        });
+
+        if(sunkCounter === 5){
+            return true;
+        }
     }
 
     //Check if it will fit on the gameboard
