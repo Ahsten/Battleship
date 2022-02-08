@@ -14,13 +14,16 @@ export default class Player{
         }
 
         gameboard.recieveAttack(row, column);
-        this.guessed.push([row, column]);
+
+        let xCoordinate = row.toString();
+        let yCoordinate = column.toString();
+        this.guessed.push(xCoordinate + yCoordinate);
     }
 
     //Generate random coordinates
     //Check if it has been guessed
     //Attack if not
-    computerAttack(){
+    computerAttack(gameboard){
         let row = Math.floor(Math.random() * 10);
         let column = Math.floor(Math.random() * 10);
 
@@ -35,8 +38,12 @@ export default class Player{
 
     //Check to see if player has already made this guess
     alreadyGuessed(row, column){
-        for(guess in this.guessed){
-            if(guess === [row, column]){
+        let xCoordinate = row.toString();
+        let yCoordinate = column.toString();
+        let guess = xCoordinate + yCoordinate;
+
+        for(let x = 0; x < this.guessed.length; x++){
+            if(this.guessed[x] === guess){
                 return true;
             }
         }
