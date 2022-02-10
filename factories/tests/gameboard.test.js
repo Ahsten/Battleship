@@ -1,5 +1,5 @@
-import GameBoard from "./gameboard";
-import Ship from "./ship";
+import GameBoard from "../gameboard";
+import Ship from "../ship";
 
 describe('gameboard', ()=> {
     test("Test creation of gameboard", ()=>{

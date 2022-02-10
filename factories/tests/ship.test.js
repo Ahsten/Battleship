@@ -1,5 +1,5 @@
-import Ship from "./ship";
-import GameBoard from "./gameboard";
+import Ship from "../ship";
+import GameBoard from "../gameboard";
 
 
 describe('ship', () => {

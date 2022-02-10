@@ -1,6 +1,6 @@
-import GameBoard from "./gameboard";
-import Ship from "./ship";
-import Player from "./player";
+import GameBoard from "../gameboard";
+import Ship from "../ship";
+import Player from "../player";
 
 describe('player', ()=> {
     let gameboard;
