@@ -1,0 +1,36 @@
+h1{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+#player{
+    display: grid;
+    grid-template-columns: repeat(10, 20px);
+    grid-template-rows: repeat(10, 20px);
+    border: 1px solid black;
+    width: max-content;
+}
+
+#player>div{
+    border:1px solid black;
+}
+
+#computer{
+    display: grid;
+    grid-template-columns: repeat(10, 20px);
+    grid-template-rows: repeat(10, 20px);
+    border: 1px solid black;
+    width: max-content;
+}
+
+#computer>div{
+    border:1px solid black;
+}
+
+#gameboards{
+    display: flex;
+    justify-content: space-around;
+}
