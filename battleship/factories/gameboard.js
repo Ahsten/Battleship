@@ -117,8 +117,8 @@ function createGameboard(){
     let board = [];
 
     for(let x = 0; x < 10; x++){
-        let row = new Array(10).fill("");
-        board.push(row);
+        let col = new Array(10).fill("");
+        board.push(col);
     }
 
     return board;
